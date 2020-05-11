@@ -14,4 +14,9 @@ node{
     def rootDir="${buildInfo}/bin/gradle"
     sh "${rootDir} clean build"
     }
+    stage('script'){
+     sh label: '', script: '''#!/bin/bash
+     scp /var/lib/jenkins/workspace/GradleProj/build/libs/functionhall-service-0.0.1-SNAPSHOT.jar root@ip-172-31-34-181:home/apache-tomcat-8.5.54/webapps
+     java -jar functionhall-service-0.0.1-SNAPSHOT.jar'''
+    }
 }
