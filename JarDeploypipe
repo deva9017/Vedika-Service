@@ -16,7 +16,7 @@ node{
     }
   stage('ShellExecutioin')
   {
-  sh label: '', script: 'sshpass -p \'12345678\' scp /var/lib/jenkins/workspace/GradleProj/build/libs/functionhall-service-0.0.1-SNAPSHOT.jar 13.127.151.104:/home/ec2-user'U
+  sh label: '', script: 'sshpass -p \'12345678\' scp /var/lib/jenkins/workspace/GradleProj/build/libs/functionhall-service-0.0.1-SNAPSHOT.jar root@13.127.151.104:/home/ec2-user'U
   sh label: '', script: 'java -jar functionhall-service-0.0.1-SNAPSHOT.jar'
   }
 }
